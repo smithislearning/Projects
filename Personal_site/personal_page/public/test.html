@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "record_2.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+	var x, i, xmlDox, j;
+		var rst = [];
+		xmlDoc = xml.responseXML;
+		for(i = 0; i < xmlDoc.getElementsByTagName("person").length; i ++) {
+			var obj = {};
+			rst.push(obj);
+		}
+		x = xmlDoc.getElementsByTagName("id")
+		for(i = 0; i < x.length; i ++) {
+			rst[i].id = x[i].childNodes[0].nodeValue;
+		}
+		x = xmlDoc.getElementsByTagName("firstName")
+		for(i = 0; i < x.length; i ++) {
+			rst[i].firstName = x[i].childNodes[0].nodeValue;
+		}
+		x = xmlDoc.getElementsByTagName("lastName")
+		for(i = 0; i < x.length; i ++) {
+			rst[i].lastName = x[i].childNodes[0].nodeValue;
+		}
+		for(i = 0; i < rst.length; i ++) {
+			console.log(rst[i].id + ", " + rst[i].firstName + ", " + rst[i].lastName);
+		}
+}
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+<div class="container-fluid" ng-controller="userCtrl" ng-init = "numPerPage = 2; currentPage = 1">
+	<h4>Users</h4>
+	<label>Sort By:
+	<select ng-model = "orderPriority">
+		<option value = "fName" selected>First Name</option>
+		<option value = "lName">Last Name</option>
+		<option value = "title">Title</option>
+		<option value = "gender">Gender</option>
+		<option value = "age">Age</option>
+	</select>
+	<form name = "sForm">
+		<label>Search:</label>
+		<input type = "text" name = "sCntnt" ng-model = "containStr" required ng-keyUp = "search()">
+	</form>
+	<form>
+		<label>Records per page</label>
+		<select ng-model="numPerPage">
+			<option value = "2" selected>2</option>
+			<option value = "10">10</option>
+			<option value = "50">50</option>
+		</select>
+	</form>
+	<div ui-view>
+		<div>
+		<table class="table" ng-init = "currentPage = 1">
+			<tr>
+				<th>Edit</th>
+				<th>Delete</th>
+				<th>Title</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Gender</th>
+				<th>Age</th>
+			</tr>
+			<tr ng-repeat="user in ((sForm.sCntnt.$valid && filteredUsrs) || filteredRst) | orderBy: orderPriority">
+				<td>
+					<a ui-sref = "projects.project_0.editUser" class="button" ng-click="editUser(user.id)">&#9998; Edit</a>
+				</td>
+				<td>
+					<button class="btn-primary" ng-click="deleteUser(user.id)">&#9998; Delete</button>
+				</td>
+				<td>{{ user.title}}</td>
+				<td>{{ user.fName }}</td>
+				<td>{{ user.lName }}</td>
+				<td>{{ user.gender}}</td>
+				<td>{{ user.age}}</td>
+			</tr>
+		</table>
+		<ul class = "pagination">
+			<li><a ng-click = "changePage(1)">First</a></li>
+			<li ng-repeat="page in pages"><a ng-click = "changePage(page)">{{page}}</a></li>
+			<li><a ng-click = "changePage(pages.length)">Last</a></li>
+		</ul>
+		</div>
+	</div>
+	<br/>
+	<a ui-sref = "projects.project_0.New_User"><button class="button">&#9998; Create New User</button></a>
+	<a ui-sref = "projects.project_0"><button class="button">Cancel and Back</button></a>
+</div>

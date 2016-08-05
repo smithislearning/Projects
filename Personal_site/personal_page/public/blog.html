@@ -1,0 +1,58 @@
+<div>
+<!-- *****************************************************************************************************************
+	 BLUE WRAP
+	 ***************************************************************************************************************** -->
+	<div id="blue">
+	    <div class="container">
+			<div class="row">
+				<h3>My Blog.</h3>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /blue -->
+
+	 
+	<!-- *****************************************************************************************************************
+	 BLOG CONTENT
+	 ***************************************************************************************************************** -->
+
+	 <div class="container mtb">
+	 	<div class="row">
+	 		<! -- BLOG POSTS LIST -->
+	 		<div class="col-lg-8">
+	 			<div ng-repeat="blog in filteredBlogs">
+	 				<h3 class="ctitle">{{blog.title}}.</h3>
+	 				<p><csmall>Posted: {{blog.date.toDateString()}}</csmall></p>
+	 				<p>{{blog.cntnt}}</p>
+	 				<div class = "hline"></div>
+	 				<div class = "spacing"></div>
+	 			</div>
+	 			<ul class = "pagination">
+	 				<li><a ng-click = "changePage(1)">First</a></li>
+	 				<li ng-repeat = "page in pages"><a ng-click = "changePage(page)">{{page}}</a></li>
+	 				<li><a ng-click = "changePage(pages.length)">Last</a></li>
+	 			</ul>
+			</div><! --/col-lg-8 -->
+	 		
+	 		
+	 		<! -- SIDEBAR -->
+	 		<div class="col-lg-4">
+	 			<h4>Search</h4>
+		 		<div class="hline"></div>
+		 			<p>
+		 				<br/>
+		 				<input type="text" class="form-control" placeholder="Search something" ng-model="containStr" required ng-keyUp = "search(containStr)">
+		 			</p>
+		 			
+		 		<div class="spacing"></div>
+		 		
+		 		<h4>Categories</h4>
+		 		<div class="hline"></div>
+		 			<p ng-repeat="(key, value) in cats" ng-click="search(key)"><i class="fa fa-angle-right"></i>{{key}}<span class="badge badge-theme pull-right">{{value}}></span></p>
+
+		 		<div class="spacing"></div>
+
+
+	 		</div>
+	 	</div><! --/row -->
+	 </div><! --/container -->
+</div>

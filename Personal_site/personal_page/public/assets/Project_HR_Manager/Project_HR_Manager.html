@@ -1,0 +1,33 @@
+<div ng-app="project_0" ng-controller="userCtrl" ng-init = "numPerPage = 2; currentPage = 1"class ="container-fluid">
+		<div>
+			<h3>Users</h3>
+			<label>Sort By:
+			<select ng-model = "orderPriority">
+				<option value = "fName" selected>First Name</option>
+				<option value = "lName">Last Name</option>
+				<option value = "title">Title</option>
+				<option value = "gender">Gender</option>
+				<option value = "age">Age</option>
+			</select>
+			<form name = "sForm">
+				<label>Search:</label>
+				<input type = "text" name = "sCntnt" ng-model = "containStr" required ng-keyUp = "search()">
+			</form>
+			<form>
+				<label>Records per page</label>
+				<select ng-model="numPerPage">
+					<option value = "2" selected>2</option>
+					<option value = "10">10</option>
+					<option value = "50">50</option>
+				</select>
+			</form>
+	
+
+			<div ng-view></div>
+			<br/>
+			<a href = "#/New_User"><button class="w3-btn w3-green w3-ripple"">&#9998; Create New User</button></a>
+			<a href = "#/Use_List"><button class="w3-btn w3-green w3-ripple"">Cancel and Back</button></a>
+		</div>
+</div>
+
+

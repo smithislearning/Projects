@@ -1,0 +1,65 @@
+<div>
+	<h3>Edit User:</h3>
+	
+	<img src="assets/img/{{pic}}" height="150px"></img>
+	<br/>
+	<label>First Name:</label>
+	<input type="text" ng-model="fName" disabled></input>
+	
+	<label>Last Name:</label>
+	<input type="text" ng-model="lName" disabled></input>
+	
+	<label>Position:</label>
+	<input type="text" ng-model="position"></input>
+	</br>
+	<label>Gender:</label>
+	<select ng-model="gender" disabled>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+	</br>
+	<label>Time Join The Company:</label>
+	<input type="number" ng-model="joinYear" plcaeHodler="Year" disabled></input>
+	<input type="number" ng-model="joinMonth" plcaeHodler="Month" disabled></input>
+	<input type="number" ng-model="joinDate" plcaeHodler="Date" disabled></input>
+	</br>
+	<label>Salary:</label>
+	<input type="number" ng-model="salary" placeHolder="Salary"></input>
+	</br>
+	<label>Choose a supervisor for this new employee:</label>
+	<select ng-model="idx" ng-init="idx = -1">
+		<option ng-repeat="emp in avlbSups" value = '{{avlbSups.indexOf(emp)}}'>
+			<img src='assets/img/{{emp.pic}}' class="img.thumbnail">{{emp.fName}} {{emp.lName}}
+		</option>
+	</select>
+	</br>
+	<label>Subordinates</label>
+	<table>
+		<tr>
+			<th>Picture</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Position</th>
+			<th>Gender</th>
+			<th>Year Joined</th>
+			<th>Salary</th>
+			<th>Number of Subordinate</th>
+		</tr>
+		<tr ng-repeat="sub in subs">
+			<td><img src="assets/img/{{emp.pic}}" class="img.thumbnail"></td>
+			<td>{{sub.fName}}</td>
+			<td>{{sub.lName}}</td>
+			<td>{{sub.position}}</td>
+			<td>{{sub.gender}}</td>
+			<td>{{sub.jTime.toString().substring(0, 4)}}</td>
+			<td>{{sub.salary}}</td>
+			<td>{{sub.sub}}</td>
+		</tr>
+	</table>
+	<label>Phone Number:</label>
+	<input type="text" ng-model="phone" ui-mask="(999)999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"/>
+	<label>E-mail: </label>
+	<input type="email" ng-model="email"></input>
+	<a ui-sref = "home" class = "btn btn-info" role="button">Cancle</a>
+	<a ui-sref = "img" class="btn btn-info" role="button" ng-click="save()">Next: Change Picture.</a>
+</div>

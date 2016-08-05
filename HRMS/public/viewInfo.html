@@ -1,0 +1,66 @@
+<div class='container-fluid'>
+	<h3>Edit User:</h3>
+		
+	<div class='row'>
+		<div class='col-sm-4'>
+			<img src="assets/img/{{pic}}"></img>
+		</div>
+		<div class='col-sm-8'>
+			<table class='table'>
+				<tr>
+					<td>First Name:</td>
+					<td>{{fName}}</td>
+					<td>Last Name:</td>
+					<td>{{lName}}</td>
+				</tr>
+				<tr>
+					<td>Position:</td>
+					<td>{{position}}</td>
+					<td>Gender:</td>
+					<td>{{gender}}</td>
+				</tr>
+				<tr>
+					<td colspan='3'>Time Joine the Companey:</td>
+					<td colspan='1'>{{joinMonth}} - {{joinDate}} - {{joinYear}}</td>
+				</tr>
+				<tr>
+					<td>Salary:</td>
+					<td>{{Salary}}</td>
+					<td>Supervisor:</td>
+					<td>{{supfName}} {{suplName}}</td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><a href='tel:{{emp.phone}}'>{{emp.phone}}</a></td>
+					<td>E-mail: </td>
+					<td><a href='mailto:{{emp.email}}'>{{emp.email}}</a></td>
+				</tr>
+			</table>
+			<label>Subordinates</label>
+			<table>
+				<tr>
+					<th>Picture</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Position</th>
+					<th>Gender</th>
+					<th>Year Joined</th>
+					<th>Salary</th>
+					<th>Number of Subordinate</th>
+				</tr>
+				<tr ng-repeat="sub in subs">
+					<td><img src="assets/img/{{sub.pic}}" class="img.thumbnail" height="40px"></td>
+					<td>{{sub.fName}}</td>
+					<td>{{sub.lName}}</td>
+					<td>{{sub.position}}</td>
+					<td>{{sub.gender}}</td>
+					<td>{{sub.jTime.toString().substring(0, 4)}}</td>
+					<td>{{sub.salary}}</td>
+					<td>{{sub.sub}}</td>
+				</tr>
+			</table>
+			
+		</div>
+	</div>
+	<a ui-sref = "home" class = "btn btn-info" role="button">Back to List</a>
+</div>

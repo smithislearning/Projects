@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+<!--		<link rel="shortcut icon" href="assets/ico/favicon.ico">-->
+		<title>Chi Zhang's Personal Site</title>
+		<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+		<body ng-app="myApp">
+		<!-- Fixed navbar -->
+			<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" ui-sref="home">CHI ZHANG</a>
+					</div>
+				<div class="navbar-collapse collapse navbar-right" ng-controller="HeaderController">
+					<ul class="nav navbar-nav">
+						<li ng-class="{ active: isActive('/home')}"><a ui-sref="home">HOME</a></li>
+						<li ng-class="{ active: isActive('/about')}"><a ui-sref="about">ABOUT</a></li>
+						<li ng-class="{ active: isActive('/contact')}"><a ui-sref="contact">CONTACT</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">WORK & OTHERS<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li ng-class="{ active: isActive('/projects')}"><a ui-sref="projects">PROJECTS</a></li>
+								<li ng-class="{ active: isActive('/blog')}"><a ui-sref="blog">BLOG</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+		
+		<div ui-view></div>
+<!-- *****************************************************************************************************************
+	 FOOTER
+	 ***************************************************************************************************************** -->
+		<div id="footerwrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<h4>Disclaimer</h4>
+						<div class="hline-w"></div>
+						<p>This is Chi Zhang's personal web site. All views are of my own. Unless specificly approved by me myself or requested or subpoenaed legitimately by law enforcement agencies, I do not authorize any third party to use any of my opinions presented in any part or anywhere on this website.</p>
+					</div>
+					<div class="col-lg-4">
+						<h4>Man Cave</h4>
+						<div class="hline-w"></div>
+						<p>Sorry, as you know there are really quite some crazy and stupid guys on the internet, for personal physical security reasons, you won't get my address unless we establish some trust first.</p>
+					</div>
+				</div><! --/row -->
+			</div><! --/container -->
+		</div><! --/footerwrap -->
+		
+		<script src="assets/js/jquery-2.2.4.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/retina-1.1.0.js"></script>
+		<script src="assets/js/jquery.hoverdir.js"></script>
+		<script src="assets/js/jquery.hoverex.min.js"></script>
+		<script src="assets/js/jquery.prettyPhoto.js"></script>
+		<script src="assets/js/jquery.isotope.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+		<script src="assets/js/angular.min.js"></script>
+		<script src="assets/js/angular-ui-router.min.js"></script>
+<!--		<script src="assets/js/angular-route.min.js"></script>	-->
+		<script src="assets/js/function.js"></script>
+	</body>
+</html>

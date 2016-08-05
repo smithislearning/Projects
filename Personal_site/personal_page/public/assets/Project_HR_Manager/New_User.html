@@ -1,0 +1,31 @@
+<div>
+	<h3>Create New User:</h3>
+	<label>First Name:</label>
+	<input class="w3-input w3-border" type="text" ng-model="fName" placeholder="First Name"></input>
+	<label>Last Name:</label>
+	<input class="w3-input w3-border" type="text" ng-model="lName" placeholder="Last Name"></input>
+	<br/>
+	<label>Title:</label>
+	<select ng-model="title">
+		<option value = "mr">Mr.</option>
+		<option value = "ms">Ms.</option>
+		<option value = "mrs">Mrs.</option>
+	</select>
+	<br/>
+	<label>Gender:</label>
+	<select ng-model="gender" ng-disabled="!edit">
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+	<br/>
+	<label>Age:</label>
+	<input class="w3-input w3-border" type="number" ng-model="age" placeholder="Age"></input>
+	<br/>
+	<label>Password:</label>
+	<input class="w3-input w3-border" type="password" ng-model="passw1" placeholder="Password"></input>
+	<br/>
+	<label>Repeat:</label>
+	<input class="w3-input w3-border" type="password" ng-model="passw2" placeholder="Repeat Password"></input>
+	<br/>
+	<a href = "#/" class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete" ng-click = "save()">&#10004; Save Changes</a>
+</div>

@@ -1,0 +1,39 @@
+<div>
+	<h3>Edit User:</h3>
+	<label>First Name:</label>
+	<input type="text" ng-model="fName" placeholder="First Name"></input>
+	</br>
+	<label>Last Name:</label>
+	<input type="text" ng-model="lName" placeholder="Last Name"></input>
+	</br>
+	<label>Position:</label>
+	<input type="text" ng-model="position" placeHolder="Position"></input>
+	</br>
+	<label>Gender:</label>
+	<select ng-model="gender">
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+	</br>
+	<label>Time Join The Company:</label>
+	<input type="number" ng-model="joinYear" plcaeHodler="Year"></input>
+	<input type="number" ng-model="joinMonth" plcaeHodler="Month"></input>
+	<input type="number" ng-model="joinDate" plcaeHodler="Date"></input>
+	</br>
+	<label>Salary:</label>
+	<input type="number" ng-model="salary" placeHolder="Salary"></input>
+	</br>
+	<label>Choose a supervisor for this new employee:</label>
+	<select ng-model="idx" ng-init="idx = -1">
+		<option ng-repeat="emp in rec" value = '{{rec.indexOf(emp)}}'>
+			<img src='assets/img/{{emp.pic}}' class="img.thumbnail">{{emp.fName}} {{emp.lName}}
+		</option>
+	</select>
+	</br>
+	<label>Phone Number:</label>
+	<input type="text" ng-model="phone" ui-mask="(999)999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"/>
+	<label>E-mail: </label>
+	<input type="email" ng-model="email"></input>
+	<a ui-sref = "home" class = "btn btn-info" role="button">Cancle</a>
+	<a ui-sref = "img" class="btn btn-info" role="button" ng-click="save()">Create New Employee Record And Upload Photo</a>
+</div>

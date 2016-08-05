@@ -1,0 +1,16 @@
+<div>
+<!--	<form action={{addr}} enctype="multipart/form-data" method="post" id="my_form">
+		<input type="file" name="upload" id="pic" multiple>
+<!--		<a ui-sref="home" ng-click="form.submit()">Upload</a>
+<!--	   	<input type="submit" value="Upload"></input>-->
+<!--	</form>
+	<a ui-sref="home" onclick="document.getElementById('my_form').submit() ">Upload</a>-->
+	
+	<form name='upload_form'>
+		<input type="file" ngf-select ng-model="tfile" name="file" accept="image/*">
+<!--		<input type = 'file' ngf-select ng-model='tfile' name='file' ngf-pattern="'img/*'" accept="image/*"/>-->
+		<!--<a ui-sref="home" ng-click="submit()">Upload</a>-->
+		<button type="button" class="btn btn-default"' ng-click='upload(tfile)'>submit</button>
+		<!--<a type="button" ui-sref="home" ng-click="upload(tfile)">upload</a>-->
+	</form>
+</div>

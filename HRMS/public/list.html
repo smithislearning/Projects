@@ -1,0 +1,55 @@
+<div>
+	<div class="container-fluid">
+		<label>Sort By:</label>
+		<select ng-model = "orderPriority">
+			<option value = "fName" selected>First Name</option>
+			<option value = "lName">Last Name</option>
+			<option value = "title">Title</option>
+			<option value = "gender">Gender</option>
+			<option value = "age">Age</option>
+		</select>
+		<form name = "sForm">
+			<label>Search:</label>
+			<input type = "text" name = "sCntnt" ng-model = "target" required ng-keyUp = "search()">
+		</form>
+		<button type="button" class="btn btn-default" ng-click="new()" ui-sref="new">Create New Employee Record</button>
+		<button type="button" class="btn btn-default" ng-click="refresh()">Refresh/Back Full List</button>
+<!--		<table>-->
+		<table class="table table-striped" infinite-scroll='loadMore()'><!-- infinite-scroll-distance='2'>-->
+			<thead>
+			<tr>
+				<th>Picture</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Position</th>
+				<th>Gender</th>
+				<th>Year Joined</th>
+				<th>Salary</th>
+				<th>Supervisor</th>
+				<th>Number of Subordinate</th>
+				<th>Phone</th>
+				<th>e-mail</th>
+			</tr>
+			</thead>
+			<!--<tr ng-repeat="emp in employees">-->
+			<tbody>
+			<tr ng-repeat="emp in ((sForm.sCntnt.$valid && filteredEmps) || employees) | orderBy: orderPriority">
+				<td><img src="assets/img/{{emp.pic}}" class="img.thumbnail" height="40px"></td>
+				<td>{{emp.fName}}</td>
+				<td>{{emp.lName}}</td>
+				<td>{{emp.position}}</td>
+				<td>{{emp.gender}}</td>
+				<td>{{emp.jTime.toString().substring(0, 4)}}</td>
+				<td>{{emp.salary}}</td>
+				<td><a ui-sref='viewInfo' ng-click='vi(emp.sup)'>{{emp.supfName}} {{emp.suplName}}</td>
+				<td ng-click='showSub(emp._id)'>{{emp.sub}}</td>
+				<td><a href='tel:{{emp.phone}}'>{{emp.phone}}</a></td>
+				<td><a href='mailto:{{emp.email}}'>{{emp.email}}</a></td>
+<!--				<td>{{emp._id}}</td>-->
+				<td><a ui-sref = "edit" class = "btn btn-info" role="button" ng-click="edit(emp._id)">Edit</a></td>
+				<td><button type="button" class="btn btn-danger" ng-click="delete(emp._id)">Delete</button></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

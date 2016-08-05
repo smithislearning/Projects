@@ -1,0 +1,133 @@
+<div>
+<!-- *****************************************************************************************************************
+	 HEADERWRAP
+	 ***************************************************************************************************************** -->
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4 himg">
+					<img src="assets/img/IMG_0601.jpg" class="img-circle" width="150px" height="150px"></img>
+					
+				</div>
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1>Hello! Welcome to my personal site!</h1>
+				</div>
+			</div><!-- /row -->
+		</div> <!-- /container -->
+	</div><!-- /headerwrap -->
+
+<!-- *****************************************************************************************************************
+	 SERVICE LOGOS
+	 ***************************************************************************************************************** -->
+	 
+	 <div id="service">
+	 	<div class="container">
+ 			<div class="row centered">
+ 				<div class="col-lg-8 col-lg-offset-2">
+ 					<h3>This is a my personal website. Here I have some maybe or may not be serious stuff about me and some of my opinions. I am pretty sure you will find something interesting and useful about me. Whether you already know me or find this website somehow. Take your time. And have fun!</h3>
+ 				</div>
+ 				<div class="col-md-4">
+ 					<i class="fa fa-smile-o"></i>
+ 					<h4>You know me!</h4>
+ 					<p>Hi,my friend! If you already known me, please click the button below to know more about me! I man on my opinions on some issues, my histories etc.</p>
+ 					<p><br/><a ui-sref="friend" class="btn btn-theme">Bro!/Sis!</a></p>
+ 				</div>
+ 				<div class="col-md-4">
+ 					<i class="fa fa-briefcase"></i>
+ 					<h4>HR/Manager</h4>
+ 					<p>Please click the button below if you are a technic recruiter, hr, or manager who is interested in knowing more about me besides information on my resume.</p>
+ 					<p><br/><a ui-sref="hr" class="btn btn-theme">Hi, Boss!</a></p>
+ 				</div>
+ 				<div class="col-md-4">
+ 					<i class="fa fa-question"></i>
+ 					<h4>Who is this guy?</h4>
+ 					<p>If you don't know me, but find this site somehow. And you want to know something about this guy, please click the button below~</p>
+ 					<p><br/><a ui-sref="stranger" class="btn btn-theme">Hi! Stranger...</a></p>
+ 				</div>		 				
+	 		</div>
+	 	</div><! --/container -->
+	 </div><! --/service -->
+
+<!--	<script>
+		// Portfolio
+		(function($) {
+			"use strict";
+			var $container = $('.portfolio'),
+			$items = $container.find('.portfolio-item'),
+			portfolioLayout = 'fitRows';
+			
+			if( $container.hasClass('portfolio-centered') ) {
+				portfolioLayout = 'masonry';
+			}
+			
+			$container.isotope({
+				filter: '*',
+				animationEngine: 'best-available',
+				layoutMode: portfolioLayout,
+				animationOptions: {
+					duration: 750,
+					easing: 'linear',
+					queue: false
+				},
+				masonry: {
+				}
+				}, refreshWaypoints());
+			
+			function refreshWaypoints() {
+				setTimeout(function() {
+				}, 1000);
+			}
+			
+			$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+			});
+			
+			function getColumnNumber() { 
+				var winWidth = $(window).width(), 
+				columnNumber = 1;
+				
+				if (winWidth > 1200) {
+					columnNumber = 5;
+				} else if (winWidth > 950) {
+					columnNumber = 4;
+				} else if (winWidth > 600) {
+					columnNumber = 3;
+				} else if (winWidth > 400) {
+					columnNumber = 2;
+				} else if (winWidth > 250) {
+					columnNumber = 1;
+				}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+					});
+				});
+			}
+		
+			function setPortfolio() { 
+				setColumns();
+				$container.isotope('reLayout');
+			}
+			
+			$container.imagesLoaded(function () { 
+				setPortfolio();
+			});
+		
+			$(window).on('resize', function () { 
+				setPortfolio();          
+			});
+		})(jQuery);
+	</script>-->
+</div>	 
